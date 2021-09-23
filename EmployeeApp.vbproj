@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>EmployeeApp</RootNamespace>
+    <StartupObject>Sub Main</StartupObject>
+    <UseWindowsForms>true</UseWindowsForms>
+    <MyType>WindowsForms</MyType>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <Version>1.0.10</Version>
+    <Authors>Charles Hemingway</Authors>
+    <Company>Sunken Sub Software LLC</Company>
+    <Description>This is a test app.  I hope that it will show that I can read problem specifications and draft a reasonable solution.
+It will show that I am familar with data constructs in .NET 5.0, also (hopefully).
+
+</Description>
+    <Copyright>2021</Copyright>
+    <PackageLicenseExpression>Public Domain</PackageLicenseExpression>
+    <PackageReleaseNotes>.NET 5 in VS 2019</PackageReleaseNotes>
+    <OptionStrict>On</OptionStrict>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn></NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42025,42026,42029,42030,42031,42032,42036,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn></NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42025,42026,42029,42030,42031,42032,42036,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="My Project\Application.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
